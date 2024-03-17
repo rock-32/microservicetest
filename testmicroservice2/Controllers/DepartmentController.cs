@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using testmicroservice2.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +9,14 @@ namespace testmicroservice2.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
+        private readonly IDepartmentService _departmentService;
         // GET: api/<DepartmentController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok( await _departmentService.ListDipartments());
         }
 
-        // GET api/<DepartmentController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<DepartmentController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<DepartmentController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<DepartmentController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        
     }
 }

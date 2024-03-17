@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  microservicetest:
+    image: ${DOCKER_REGISTRY-}microservicetest
+    build:
+      context: .
+      dockerfile: microservicetest/Dockerfile
+
+  testmicroservice2:
+    image: ${DOCKER_REGISTRY-}testmicroservice2
+    build:
+      context: .
+      dockerfile: testmicroservice2/Dockerfile
+

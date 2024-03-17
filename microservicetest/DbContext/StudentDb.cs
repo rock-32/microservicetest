@@ -9,7 +9,7 @@ namespace microservicetest.DbContextinherited
         {
 
         }
-        DbSet<Student> StudentTb { get; set; }
+        public DbSet<Student> StudentTb { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

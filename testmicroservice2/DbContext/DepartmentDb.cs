@@ -9,7 +9,7 @@ namespace testmicroservice2.DbContextinherited
         {
 
         }
-        DbSet<Department> DepartmentTb {  get; set; }
+        public DbSet<Department> DepartmentTb {  get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
